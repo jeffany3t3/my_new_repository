@@ -13,8 +13,7 @@ n = A.shape[0]
 # 拡大行列 G = [A, b] を作る
 G = np.hstack((A, b.reshape(n, 1)))
 G = G.astype(float)
-# 確認用：拡大行列を出力
-print(G)
+
 
 # 前進代入
 ExistAns = True
@@ -45,8 +44,6 @@ for k in range(0, n - 1):
           if(math.isclose(G[i, j], 0, abs_tol = 1e-10)):
             G[i, j] = 0
 
-    # 確認用：前進消去中の拡大行列を出力
-    print(G)
 
 # 解を格納する行列を宣言
 x = np.zeros(n)
